@@ -230,6 +230,28 @@ a { color: var(--bleu); }
   color: var(--gris);
 }
 
+/* ---------- Galerie chantiers ---------- */
+.galerie {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+.galerie figure { margin: 0; }
+.galerie img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--bord);
+  background: var(--blanc);
+}
+.galerie figcaption {
+  font-size: 0.85rem;
+  color: var(--gris);
+  margin-top: 0.45rem;
+}
+
 /* ---------- Étapes ---------- */
 .etapes {
   display: grid;
@@ -263,6 +285,33 @@ a { color: var(--bleu); }
 }
 .etape h3 { margin: 0 0 0.3rem; font-size: 1rem; }
 .etape p { margin: 0; font-size: 0.9rem; color: var(--gris); }
+
+/* ---------- Avis clients ---------- */
+.grille-avis {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+.avis-carte {
+  background: var(--blanc);
+  border: 1px solid var(--bord);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.5rem;
+}
+.avis-carte .etoiles {
+  color: var(--accent);
+  letter-spacing: 2px;
+  margin: 0 0 0.6rem;
+}
+.avis-carte blockquote {
+  margin: 0 0 0.8rem;
+  font-size: 0.95rem;
+}
+.avis-carte cite {
+  font-style: normal;
+  font-size: 0.85rem;
+  color: var(--gris);
+}
 
 /* ---------- FAQ ---------- */
 .faq details {
