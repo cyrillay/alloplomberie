@@ -1,0 +1,9 @@
+{
+  "name": "alloplomberie",
+  "version": "1.0.0",
+  "description": "Site vitrine statique d'Allo Plomberie – Vincent Lebreton, plombier à Marseille 13006",
+  "scripts": {
+    "dev": "python3 -m http.server 8080"
+  },
+  "private": true
+}

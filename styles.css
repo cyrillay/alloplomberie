@@ -1,0 +1,417 @@
+/* ============================================
+   Allo-Plomberie Lebreton Vincent — styles.css
+   Minimaliste, mobile-first, sans dépendance
+   ============================================ */
+
+:root {
+  --bleu: #0f4c81;
+  --bleu-fonce: #0b3a63;
+  --accent: #e8632c;
+  --accent-fonce: #cf5322;
+  --encre: #1d2733;
+  --gris: #5a6675;
+  --gris-clair: #f4f6f8;
+  --bord: #e3e8ee;
+  --blanc: #ffffff;
+  --radius: 10px;
+  --maxw: 1080px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  color: var(--encre);
+  line-height: 1.65;
+  background: var(--blanc);
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg { max-width: 100%; height: auto; }
+
+a { color: var(--bleu); }
+
+.conteneur {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ---------- Bandeau urgence ---------- */
+.bandeau {
+  background: var(--bleu-fonce);
+  color: #dbe7f2;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 0.4rem 1rem;
+}
+.bandeau strong { color: var(--blanc); }
+
+/* ---------- En-tête ---------- */
+.entete {
+  border-bottom: 1px solid var(--bord);
+  background: var(--blanc);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.entete-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1.25rem;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--bleu);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.logo span { color: var(--accent); }
+
+.nav { display: flex; gap: 1.25rem; align-items: center; flex-wrap: wrap; }
+.nav a {
+  color: var(--encre);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.nav a:hover { color: var(--bleu); }
+
+.btn-tel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--accent);
+  color: var(--blanc) !important;
+  font-weight: 700;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn-tel:hover { background: var(--accent-fonce); }
+
+/* ---------- Héros ---------- */
+.heros {
+  background: linear-gradient(180deg, var(--gris-clair) 0%, var(--blanc) 100%);
+  padding: 4rem 0 3.5rem;
+  text-align: center;
+}
+.heros h1 {
+  font-size: clamp(1.7rem, 4.5vw, 2.7rem);
+  line-height: 1.2;
+  margin: 0 0 1rem;
+  letter-spacing: -0.02em;
+}
+.heros p.sous-titre {
+  font-size: 1.15rem;
+  color: var(--gris);
+  max-width: 40rem;
+  margin: 0 auto 2rem;
+}
+.heros .actions {
+  display: flex;
+  gap: 0.9rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn-principal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--accent);
+  color: var(--blanc);
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 0.9rem 1.6rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(232, 99, 44, 0.35);
+}
+.btn-principal:hover { background: var(--accent-fonce); }
+.btn-secondaire {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.9rem 1.6rem;
+  border: 2px solid var(--bleu);
+  border-radius: var(--radius);
+  color: var(--bleu);
+  font-weight: 600;
+  text-decoration: none;
+}
+.btn-secondaire:hover { background: var(--bleu); color: var(--blanc); }
+
+/* ---------- Points clés ---------- */
+.points-cles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-top: 3rem;
+}
+.point {
+  background: var(--blanc);
+  border: 1px solid var(--bord);
+  border-radius: var(--radius);
+  padding: 1.1rem 0.8rem;
+}
+.point .chiffre {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--bleu);
+}
+.point .libelle { font-size: 0.85rem; color: var(--gris); }
+
+/* ---------- Sections ---------- */
+.section { padding: 3.5rem 0; }
+.section.alt { background: var(--gris-clair); }
+.section h2 {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+.section .intro {
+  color: var(--gris);
+  max-width: 44rem;
+  margin: 0 0 2rem;
+}
+
+/* ---------- Grille services ---------- */
+.grille-services {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.25rem;
+}
+.carte {
+  background: var(--blanc);
+  border: 1px solid var(--bord);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+.carte h3 { margin: 0 0 0.5rem; font-size: 1.05rem; }
+.carte p { margin: 0; font-size: 0.92rem; color: var(--gris); }
+.carte .icone {
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  background: #e7f0f8;
+  color: var(--bleu);
+  border-radius: 8px;
+  margin-bottom: 0.9rem;
+  font-size: 1.3rem;
+}
+
+/* ---------- Zone d'intervention ---------- */
+.quartiers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 1rem 0 0;
+  list-style: none;
+}
+.quartiers li {
+  background: var(--blanc);
+  border: 1px solid var(--bord);
+  border-radius: 999px;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.88rem;
+  color: var(--gris);
+}
+
+/* ---------- Étapes ---------- */
+.etapes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  counter-reset: etape;
+}
+.etape {
+  position: relative;
+  padding: 1.25rem 1.25rem 1.25rem 3.4rem;
+  background: var(--blanc);
+  border: 1px solid var(--bord);
+  border-radius: var(--radius);
+}
+.etape::before {
+  counter-increment: etape;
+  content: counter(etape);
+  position: absolute;
+  left: 1rem;
+  top: 1.15rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bleu);
+  color: var(--blanc);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 50%;
+}
+.etape h3 { margin: 0 0 0.3rem; font-size: 1rem; }
+.etape p { margin: 0; font-size: 0.9rem; color: var(--gris); }
+
+/* ---------- FAQ ---------- */
+.faq details {
+  border: 1px solid var(--bord);
+  border-radius: var(--radius);
+  background: var(--blanc);
+  margin-bottom: 0.75rem;
+  padding: 0 1.25rem;
+}
+.faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 1rem 0;
+  list-style: none;
+  position: relative;
+  padding-right: 2rem;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+";
+  position: absolute;
+  right: 0.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--bleu);
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+.faq details[open] summary::after { content: "–"; }
+.faq details p { margin: 0 0 1rem; color: var(--gris); }
+
+/* ---------- Appel à l'action final ---------- */
+.cta-final {
+  background: var(--bleu);
+  color: var(--blanc);
+  text-align: center;
+  padding: 3.5rem 1.25rem;
+}
+.cta-final h2 { color: var(--blanc); margin: 0 0 0.5rem; }
+.cta-final p { color: #c9dcee; margin: 0 0 1.5rem; }
+
+/* ---------- Formulaire ---------- */
+.formulaire {
+  max-width: 560px;
+  display: grid;
+  gap: 1rem;
+}
+.formulaire label {
+  font-weight: 600;
+  font-size: 0.92rem;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.formulaire input,
+.formulaire textarea {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--bord);
+  border-radius: 8px;
+  font: inherit;
+  color: var(--encre);
+}
+.formulaire input:focus,
+.formulaire textarea:focus {
+  outline: 2px solid var(--bleu);
+  outline-offset: 1px;
+  border-color: var(--bleu);
+}
+.formulaire .rgpd {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  font-size: 0.85rem;
+  color: var(--gris);
+}
+.formulaire .rgpd input { width: auto; margin-top: 0.25rem; }
+.formulaire button {
+  background: var(--bleu);
+  color: var(--blanc);
+  font: inherit;
+  font-weight: 700;
+  border: 0;
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.formulaire button:hover { background: var(--bleu-fonce); }
+
+.coordonnees {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+/* ---------- Pages légales ---------- */
+.page-legale h1 { font-size: 1.8rem; }
+.page-legale h2 { font-size: 1.2rem; margin-top: 2rem; }
+.page-legale { padding: 3rem 0 4rem; }
+
+/* ---------- Pied de page ---------- */
+.pied {
+  background: var(--encre);
+  color: #aeb8c4;
+  padding: 2.5rem 0 5.5rem; /* marge basse pour la barre d'appel mobile */
+  font-size: 0.9rem;
+}
+.pied a { color: #d5dde5; text-decoration: none; }
+.pied a:hover { text-decoration: underline; }
+.pied-grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.pied h3 { color: var(--blanc); font-size: 1rem; margin: 0 0 0.75rem; }
+.pied ul { list-style: none; padding: 0; margin: 0; }
+.pied li { margin-bottom: 0.4rem; }
+.pied .copyright {
+  border-top: 1px solid #333f4d;
+  padding-top: 1.25rem;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* ---------- Barre d'appel mobile ---------- */
+.barre-appel {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--accent);
+  color: var(--blanc);
+  text-align: center;
+  padding: 0.9rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-decoration: none;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.barre-appel svg { vertical-align: -3px; margin-right: 0.4rem; }
+
+@media (max-width: 720px) {
+  .barre-appel { display: block; }
+  .entete-inner { justify-content: center; }
+  .entete .btn-tel { display: none; }
+  .nav { justify-content: center; gap: 0.5rem 1rem; font-size: 0.88rem; }
+  .bandeau { font-size: 0.78rem; }
+}
